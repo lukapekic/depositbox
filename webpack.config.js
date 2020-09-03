@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const nodeSass = require('node-sass');
 
 const webpackConfiguration = (env) => {
   const enviroment = env.NODE_ENV;
@@ -38,6 +39,19 @@ const webpackConfiguration = (env) => {
             outputPath: 'assets',
           },
         },
+        {
+          test: /\.s[ac]ss$/i,
+          use: [
+            'style-loader',
+            'css-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                implementation: nodeSass,
+              },
+            },
+          ],
+        },
       ],
     },
 
@@ -61,7 +75,7 @@ const webpackConfiguration = (env) => {
       historyApiFallback: true,
     },
 
-    devtool: isProduction ? 'source-map' : 'inline-source-map',
+    devtool: isProduction ? 'none' : 'inline-source-map',
     plugins,
   };
 };
