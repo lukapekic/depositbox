@@ -1,0 +1,26 @@
+.key {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+
+  background-color: $color-button;
+  box-shadow: 0 0rem 1rem 0 rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+
+  &__label {
+    color: $color-buttonText;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  &::after {
+    content: attr(datasymbol);
+    position: absolute;
+    bottom: 0.3rem;
+    right: 0.5rem;
+    color: $color-screenText;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}

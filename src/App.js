@@ -1,9 +1,13 @@
 import React from 'react';
+
+import { ControlPanel } from './components';
 import './styles/main.scss';
 
 const App = () => (
   <div>
-    <h1>Hello world</h1>
+    <main>
+      <ControlPanel sn="481516234" />
+    </main>
   </div>
 );
 

@@ -1,0 +1,18 @@
+.panel {
+  position: relative;
+  width: 50rem;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 3px solid black;
+  padding: 5rem 7rem;
+  background-color: $color-panelBody;
+
+  &__sn {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: $color-screenText;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+}

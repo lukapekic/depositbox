@@ -4,6 +4,8 @@
   },
   "extends": ["airbnb", "airbnb/hooks"],
   "rules": {
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "import/prefer-default-export": "warn",
+    "no-unused-vars": "warn"
   }
 }
