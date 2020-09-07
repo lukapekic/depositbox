@@ -22,9 +22,16 @@
   }
 
   &__mode {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    pointer-events: none;
+
     color: $color-screenText;
+    font-family: inherit;
     font-size: 2.5rem;
     font-weight: 500;
-    align-self: flex-end;
+    text-align: right;
   }
 }

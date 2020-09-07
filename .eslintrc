@@ -6,6 +6,7 @@
   "rules": {
     "react/jsx-filename-extension": "off",
     "import/prefer-default-export": "warn",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "object-curly-newline": "off"
   }
 }

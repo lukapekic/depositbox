@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { bool, string } from 'prop-types';
 import classnames from 'classnames';
 
-const Screen = ({ locked, mode, active }) => {
+const Screen = ({ locked, mode, input }) => {
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    let idleTimeout;
+
+    if (input) {
+      setActive(true);
+      idleTimeout = setTimeout(() => setActive(false), 5000);
+    }
+
+    return () => {
+      clearTimeout(idleTimeout);
+    };
+  }, [input]);
+
   const classes = classnames({
     screen: true,
     'screen--active': active,
@@ -11,7 +26,12 @@ const Screen = ({ locked, mode, active }) => {
   return (
     <div className={classes}>
       <p className="screen__lock">{locked ? 'Locked' : 'Unlocked'}</p>
-      <p className="screen__mode">{mode}</p>
+
+      <input
+        className="screen__mode"
+        type="text"
+        value={input || mode}
+      />
     </div>
   );
 };
@@ -19,13 +39,13 @@ const Screen = ({ locked, mode, active }) => {
 Screen.propTypes = {
   locked: bool,
   mode: string,
-  active: bool,
+  input: string,
 };
 
 Screen.defaultProps = {
   locked: false,
   mode: 'Ready',
-  active: false,
+  input: null,
 };
 
 export default Screen;

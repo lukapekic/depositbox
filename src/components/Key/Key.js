@@ -1,14 +1,20 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { string, func } from 'prop-types';
 
-const Key = ({ label, symbol }) => (
-  <div className="key" datasymbol={symbol}>
+const Key = ({ label, symbol, onClick }) => (
+  <button
+    type="button"
+    className="key"
+    onClick={onClick}
+    datasymbol={symbol}
+  >
     <p className="key__label">{label}</p>
-  </div>
+  </button>
 );
 
 Key.propTypes = {
   label: string.isRequired,
+  onClick: func.isRequired,
   symbol: string,
 };
 

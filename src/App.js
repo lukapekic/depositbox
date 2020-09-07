@@ -1,14 +1,14 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
 
-import { ControlPanel } from './components';
+import { HomePage } from './pages';
 import './styles/main.scss';
 
 const App = () => (
-  <div>
-    <main>
-      <ControlPanel sn="481516234" />
-    </main>
-  </div>
+  <Provider store={store}>
+    <HomePage />
+  </Provider>
 );
 
 export default App;
