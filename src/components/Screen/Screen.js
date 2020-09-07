@@ -7,16 +7,17 @@ const Screen = ({ locked, mode, input }) => {
 
   useEffect(() => {
     let idleTimeout;
+    setActive(false);
 
-    if (input) {
+    if (input || mode) {
       setActive(true);
-      idleTimeout = setTimeout(() => setActive(false), 5000);
+      idleTimeout = setTimeout(() => setActive(false), 3000);
     }
 
     return () => {
       clearTimeout(idleTimeout);
     };
-  }, [input]);
+  }, [input, mode]);
 
   const classes = classnames({
     screen: true,

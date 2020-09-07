@@ -1,0 +1,11 @@
+.list {
+  display: block;
+  position: relative;
+  color: #fff;
+  margin-bottom: 2rem;
+
+  &--ordered {
+    list-style: inside;
+    list-style-type: decimal;
+  }
+}
